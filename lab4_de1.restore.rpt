@@ -1,0 +1,78 @@
+Restore Archived Project report for lab4_de1
+Sat May 17 16:41:07 2014
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Sat May 17 16:41:07 2014 ;
+; Revision Name                   ; lab4_de1                              ;
+; Top-level Entity Name           ; lab4_de1                              ;
+; Family                          ; Cyclone II                            ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored 'C:/temp_class/test/lab4_de1_tmp_archive.qar' into the 'I:/CK_essential/UCSD/CSE_class/07_140L_14Spring/CBK/LAB4/LAB4_Base_SP14' directory
+Info: Generated report 'lab4_de1.restore.rpt'
+
+
++-------------------------+
+; Files Restored          ;
++-------------------------+
+; File Name               ;
++-------------------------+
+; HexDigit.v              ;
+; add.mif                 ;
+; assignment_defaults.qdf ;
+; clock_divider.v         ;
+; instruction_decoder.v   ;
+; instruction_fetch.v     ;
+; lab4_de1.qpf            ;
+; lab4_de1.qsf            ;
+; lab4_de1.v              ;
+; lab4_de2.v              ;
+; tc140l.v                ;
++-------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+

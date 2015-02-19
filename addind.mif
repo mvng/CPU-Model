@@ -1,0 +1,28 @@
+DEPTH = 256;	% Memory depth and width are required	%
+WIDTH = 16;		% Enter a decimal number	%
+
+ADDRESS_RADIX = HEX;	% Address and value radixes are optional	%
+DATA_RADIX = HEX;		% Enter BIN, DEC, HEX, or OCT; unless 	%
+						% otherwise specified, radixes = HEX	%
+-- Specify values for addresses, which can be single address or range
+-- program ADDIND testing
+CONTENT
+	BEGIN
+[00..FF]	:	0000;	% Range--Every address from 00 to FF = 0000 (Default)	%
+                  % Warning: Comments may or may not be correct! You must confirm %
+						%          each instruction with definition in Verilog source code. %
+	00		:	0210;	% LOAD AC with MEM(10) -- initialize AC %
+	01		:	4611;	% ADD IND memory contents to AC %
+	02		:	4613;	% ADD IND memory contents to AC %
+	03		:	4611;	% ADD IND memory contents to AC %
+	04		:	4613;	% ADD IND memory contents to AC %
+	05		:	4611;	% ADD IND memory contents to AC %
+	06		:	0300;	% JUMP to 00 (loop forever)     %
+	10		:	0003;	 
+	11		:	0012;	
+	12		:	0009;	
+	13		:	0010; 
+	14		:	0005;	
+	END ;	
+
+

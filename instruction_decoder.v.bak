@@ -1,0 +1,81 @@
+module instruction_decoder (
+				state,
+				instruction_register
+			);
+input [15:0] instruction_register;
+output [4:0] state;
+
+reg [4:0] state;
+
+// State Encodings 
+parameter	
+		fetch		= 5'h1,
+		execute_add 	= 5'h3,
+		execute_store 	= 5'h4,
+		execute_load	= 5'h7,
+		execute_jump	= 5'h8,
+		execute_jump_n  = 5'h9,
+		execute_out	= 5'ha,
+		execute_xor	= 5'hb,
+		execute_or	= 5'hc,
+		execute_and	= 5'hd,
+		execute_jpos	= 5'he,
+		execute_jzero	= 5'hf,
+		execute_addi	= 5'h10,
+		execute_shl	= 5'h11,
+		execute_shr	= 5'h12,
+		execute_sub     = 5'h13,
+		execute_rand = 5'h14,
+		execute_addind = 5'h15,
+		execute_addpcr = 5'h16
+		;
+
+always@(*)
+begin
+
+	case (instruction_register[15:8])
+		8'b00000000:
+			    state <= execute_add;
+		8'b00000001:
+			    state <= execute_store;
+		8'b00000010:
+			    state <= execute_load;
+		8'b00000011:
+			    state <= execute_jump;
+		8'b00000100:
+			    state <= execute_jump_n;
+		8'b00001100:
+			    state <= execute_out;
+		8'b00000110:
+			    state <= execute_xor;
+		8'b00000111:
+			    state <= execute_or;
+		8'b00001000:
+			    state <= execute_and;
+		8'b00001001:
+			    state <= execute_jpos;
+		8'b00001010:
+			    state <= execute_jzero;
+		8'b00001011:
+			    state <= execute_addi;
+		8'b00001101:
+			    state <= execute_shl;
+		8'b00001110:
+			    state <= execute_shr;
+		8'b00000101:
+			    state <= execute_sub;
+		//adding new instructions!
+		
+		//rand instruction
+		8'b01000101:
+				state <= execute_rand;
+		//addind instruction
+		8'b01000110:
+				state <= execute_addind;
+		8'b01000111:
+				state <= execute_addpcr;
+		default:
+			    state <= fetch;
+	endcase
+end		
+endmodule

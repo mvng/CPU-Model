@@ -1,0 +1,739 @@
+Analysis & Synthesis report for lab4_de1
+Thu May 29 02:57:57 2014
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for tc140l:tiny_cpu|altsyncram:RAM|altsyncram_kus:auto_generated
+ 13. Parameter Settings for User Entity Instance: tc140l:tiny_cpu
+ 14. Parameter Settings for User Entity Instance: tc140l:tiny_cpu|instruction_decoder:ID
+ 15. Parameter Settings for User Entity Instance: tc140l:tiny_cpu|altsyncram:RAM
+ 16. altsyncram Parameter Settings by Entity Instance
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++------------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu May 29 02:57:57 2014        ;
+; Quartus II Version                 ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
+; Revision Name                      ; lab4_de1                                     ;
+; Top-level Entity Name              ; lab4_de1                                     ;
+; Family                             ; Cyclone II                                   ;
+; Total logic elements               ; 548                                          ;
+;     Total combinational functions  ; 531                                          ;
+;     Dedicated logic registers      ; 101                                          ;
+; Total registers                    ; 101                                          ;
+; Total pins                         ; 283                                          ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 4,096                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                            ;
+; Total PLLs                         ; 0                                            ;
++------------------------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                          ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Option                                                       ; Setting            ; Default Value      ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Device                                                       ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                        ; lab4_de1           ; lab4_de1           ;
+; Family name                                                  ; Cyclone II         ; Stratix II         ;
+; Type of Retiming Performed During Resynthesis                ; Full               ;                    ;
+; Resynthesis Optimization Effort                              ; Normal             ;                    ;
+; Physical Synthesis Level for Resynthesis                     ; Normal             ;                    ;
+; Use Generated Physical Constraints File                      ; On                 ;                    ;
+; Use smart compilation                                        ; Off                ; Off                ;
+; Restructure Multiplexers                                     ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                          ; Off                ; Off                ;
+; Preserve fewer node names                                    ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                    ; Off                ; Off                ;
+; Verilog Version                                              ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                 ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                     ; Auto               ; Auto               ;
+; Safe State Machine                                           ; Off                ; Off                ;
+; Extract Verilog State Machines                               ; On                 ; On                 ;
+; Extract VHDL State Machines                                  ; On                 ; On                 ;
+; Ignore Verilog initial constructs                            ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                   ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops               ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On                 ; On                 ;
+; Parallel Synthesis                                           ; Off                ; Off                ;
+; DSP Block Balancing                                          ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                           ; On                 ; On                 ;
+; Power-Up Don't Care                                          ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                 ; Off                ; Off                ;
+; Remove Duplicate Registers                                   ; On                 ; On                 ;
+; Ignore CARRY Buffers                                         ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                       ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                    ; Off                ; Off                ;
+; Ignore LCELL Buffers                                         ; Off                ; Off                ;
+; Ignore SOFT Buffers                                          ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                               ; Off                ; Off                ;
+; Optimization Technique                                       ; Balanced           ; Balanced           ;
+; Carry Chain Length                                           ; 70                 ; 70                 ;
+; Auto Carry Chains                                            ; On                 ; On                 ;
+; Auto Open-Drain Pins                                         ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                        ; Off                ; Off                ;
+; Auto ROM Replacement                                         ; On                 ; On                 ;
+; Auto RAM Replacement                                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                              ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                ; On                 ; On                 ;
+; Strict RAM Replacement                                       ; Off                ; Off                ;
+; Allow Synchronous Control Signals                            ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                       ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                            ; Off                ; Off                ;
+; Auto Resource Sharing                                        ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing          ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives            ; Off                ; Off                ;
+; Timing-Driven Synthesis                                      ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report           ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                           ; Off                ; Off                ;
+; Synchronization Register Chain Length                        ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                 ; Normal compilation ; Normal compilation ;
+; HDL message level                                            ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages              ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100                ; 100                ;
+; Clock MUX Protection                                         ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                  ; Off                ; Off                ;
+; Block Design Naming                                          ; Auto               ; Auto               ;
+; SDC constraint protection                                    ; Off                ; Off                ;
+; Synthesis Effort                                             ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                           ; Medium             ; Medium             ;
++--------------------------------------------------------------+--------------------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                              ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+
+; clock_divider.v                  ; yes             ; User Verilog HDL File        ; C:/Users/Matt/Desktop/LAB4_Base_SP14/LAB4_Base_SP14/clock_divider.v       ;
+; HexDigit.v                       ; yes             ; User Verilog HDL File        ; C:/Users/Matt/Desktop/LAB4_Base_SP14/LAB4_Base_SP14/HexDigit.v            ;
+; instruction_decoder.v            ; yes             ; User Verilog HDL File        ; C:/Users/Matt/Desktop/LAB4_Base_SP14/LAB4_Base_SP14/instruction_decoder.v ;
+; instruction_fetch.v              ; yes             ; User Verilog HDL File        ; C:/Users/Matt/Desktop/LAB4_Base_SP14/LAB4_Base_SP14/instruction_fetch.v   ;
+; tc140l.v                         ; yes             ; User Verilog HDL File        ; C:/Users/Matt/Desktop/LAB4_Base_SP14/LAB4_Base_SP14/tc140l.v              ;
+; lab4_de1.v                       ; yes             ; User Verilog HDL File        ; C:/Users/Matt/Desktop/LAB4_Base_SP14/LAB4_Base_SP14/lab4_de1.v            ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; d:/altera/quartus/libraries/megafunctions/altsyncram.tdf                  ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; d:/altera/quartus/libraries/megafunctions/stratix_ram_block.inc           ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; d:/altera/quartus/libraries/megafunctions/lpm_mux.inc                     ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; d:/altera/quartus/libraries/megafunctions/lpm_decode.inc                  ;
+; aglobal90.inc                    ; yes             ; Megafunction                 ; d:/altera/quartus/libraries/megafunctions/aglobal90.inc                   ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; d:/altera/quartus/libraries/megafunctions/a_rdenreg.inc                   ;
+; altrom.inc                       ; yes             ; Megafunction                 ; d:/altera/quartus/libraries/megafunctions/altrom.inc                      ;
+; altram.inc                       ; yes             ; Megafunction                 ; d:/altera/quartus/libraries/megafunctions/altram.inc                      ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; d:/altera/quartus/libraries/megafunctions/altdpram.inc                    ;
+; altqpram.inc                     ; yes             ; Megafunction                 ; d:/altera/quartus/libraries/megafunctions/altqpram.inc                    ;
+; db/altsyncram_kus.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Matt/Desktop/LAB4_Base_SP14/LAB4_Base_SP14/db/altsyncram_kus.tdf ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 548    ;
+;                                             ;        ;
+; Total combinational functions               ; 531    ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 288    ;
+;     -- 3 input functions                    ; 166    ;
+;     -- <=2 input functions                  ; 77     ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 470    ;
+;     -- arithmetic mode                      ; 61     ;
+;                                             ;        ;
+; Total registers                             ; 101    ;
+;     -- Dedicated logic registers            ; 101    ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 283    ;
+; Total memory bits                           ; 4096   ;
+; Maximum fan-out node                        ; comb~0 ;
+; Maximum fan-out                             ; 83     ;
+; Total fan-out                               ; 2401   ;
+; Average fan-out                             ; 2.58   ;
++---------------------------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                          ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                    ; Library Name ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+--------------+
+; |lab4_de1                                ; 531 (71)          ; 101 (0)      ; 4096        ; 0            ; 0       ; 0         ; 283  ; 0            ; |lab4_de1                                                              ; work         ;
+;    |HexDigit:d0|                         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab4_de1|HexDigit:d0                                                  ; work         ;
+;    |HexDigit:d1|                         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab4_de1|HexDigit:d1                                                  ; work         ;
+;    |HexDigit:d2|                         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab4_de1|HexDigit:d2                                                  ; work         ;
+;    |HexDigit:d3|                         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab4_de1|HexDigit:d3                                                  ; work         ;
+;    |clock_divider:clk1Hzfrom50MHz|       ; 44 (44)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab4_de1|clock_divider:clk1Hzfrom50MHz                                ; work         ;
+;    |tc140l:tiny_cpu|                     ; 388 (369)         ; 67 (67)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab4_de1|tc140l:tiny_cpu                                              ; work         ;
+;       |altsyncram:RAM|                   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab4_de1|tc140l:tiny_cpu|altsyncram:RAM                               ; work         ;
+;          |altsyncram_kus:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab4_de1|tc140l:tiny_cpu|altsyncram:RAM|altsyncram_kus:auto_generated ; work         ;
+;       |instruction_decoder:ID|           ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab4_de1|tc140l:tiny_cpu|instruction_decoder:ID                       ; work         ;
+;       |instruction_fetch:IF|             ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab4_de1|tc140l:tiny_cpu|instruction_fetch:IF                         ; work         ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                             ;
++-------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------------+
+; Name                                                                    ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF        ;
++-------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------------+
+; tc140l:tiny_cpu|altsyncram:RAM|altsyncram_kus:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 16           ; --           ; --           ; 4096 ; addpcr.mif ;
++-------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; tc140l:tiny_cpu|state[3..4]           ; Lost fanout                            ;
+; tc140l:tiny_cpu|state[4]~7            ; Merged with tc140l:tiny_cpu|state[3]~4 ;
+; tc140l:tiny_cpu|state[4]~9            ; Merged with tc140l:tiny_cpu|state[3]~6 ;
+; Total Number of Removed Registers = 4 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 101   ;
+; Number of registers using Synchronous Clear  ; 40    ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 78    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 60    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; tc140l:tiny_cpu|state[3]~4             ; 14      ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |lab4_de1|tc140l:tiny_cpu|state[0]           ;
+; 32:1               ; 4 bits    ; 84 LEs        ; 4 LEs                ; 80 LEs                 ; Yes        ; |lab4_de1|tc140l:tiny_cpu|doge[2]            ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 8 LEs                ; 80 LEs                 ; Yes        ; |lab4_de1|tc140l:tiny_cpu|out[8]             ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |lab4_de1|tc140l:tiny_cpu|program_counter[7] ;
+; 19:1               ; 8 bits    ; 96 LEs        ; 16 LEs               ; 80 LEs                 ; Yes        ; |lab4_de1|tc140l:tiny_cpu|out[2]             ;
+; 28:1               ; 4 bits    ; 72 LEs        ; 24 LEs               ; 48 LEs                 ; Yes        ; |lab4_de1|tc140l:tiny_cpu|register_A[4]      ;
+; 28:1               ; 4 bits    ; 72 LEs        ; 24 LEs               ; 48 LEs                 ; Yes        ; |lab4_de1|tc140l:tiny_cpu|register_A[9]      ;
+; 29:1               ; 2 bits    ; 38 LEs        ; 12 LEs               ; 26 LEs                 ; Yes        ; |lab4_de1|tc140l:tiny_cpu|register_A[13]     ;
+; 30:1               ; 2 bits    ; 40 LEs        ; 12 LEs               ; 28 LEs                 ; Yes        ; |lab4_de1|tc140l:tiny_cpu|register_A[14]     ;
+; 43:1               ; 2 bits    ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |lab4_de1|tc140l:tiny_cpu|register_A[2]      ;
+; 44:1               ; 2 bits    ; 58 LEs        ; 30 LEs               ; 28 LEs                 ; Yes        ; |lab4_de1|tc140l:tiny_cpu|register_A[1]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |lab4_de1|tc140l:tiny_cpu|Add0               ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |lab4_de1|Mux2                               ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |lab4_de1|Mux13                              ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; No         ; |lab4_de1|tc140l:tiny_cpu|Mux23              ;
+; 14:1               ; 8 bits    ; 72 LEs        ; 32 LEs               ; 40 LEs                 ; No         ; |lab4_de1|tc140l:tiny_cpu|Mux23              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |lab4_de1|tc140l:tiny_cpu|Add0               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; No         ; |lab4_de1|tc140l:tiny_cpu|Add0               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |lab4_de1|tc140l:tiny_cpu|Add0               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |lab4_de1|tc140l:tiny_cpu|Add0               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Source assignments for tc140l:tiny_cpu|altsyncram:RAM|altsyncram_kus:auto_generated ;
++---------------------------------+--------------------+------+-----------------------+
+; Assignment                      ; Value              ; From ; To                    ;
++---------------------------------+--------------------+------+-----------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                     ;
++---------------------------------+--------------------+------+-----------------------+
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: tc140l:tiny_cpu ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; reset_pc       ; 00000 ; Unsigned Binary                     ;
+; fetch          ; 00001 ; Unsigned Binary                     ;
+; decode         ; 00010 ; Unsigned Binary                     ;
+; execute_add    ; 00011 ; Unsigned Binary                     ;
+; execute_store  ; 00100 ; Unsigned Binary                     ;
+; execute_store2 ; 00101 ; Unsigned Binary                     ;
+; execute_store3 ; 00110 ; Unsigned Binary                     ;
+; execute_load   ; 00111 ; Unsigned Binary                     ;
+; execute_jump   ; 01000 ; Unsigned Binary                     ;
+; execute_jump_n ; 01001 ; Unsigned Binary                     ;
+; execute_out    ; 01010 ; Unsigned Binary                     ;
+; execute_xor    ; 01011 ; Unsigned Binary                     ;
+; execute_or     ; 01100 ; Unsigned Binary                     ;
+; execute_and    ; 01101 ; Unsigned Binary                     ;
+; execute_jpos   ; 01110 ; Unsigned Binary                     ;
+; execute_jzero  ; 01111 ; Unsigned Binary                     ;
+; execute_addi   ; 10000 ; Unsigned Binary                     ;
+; execute_shl    ; 10001 ; Unsigned Binary                     ;
+; execute_shr    ; 10010 ; Unsigned Binary                     ;
+; execute_sub    ; 10011 ; Unsigned Binary                     ;
+; execute_rand   ; 10100 ; Unsigned Binary                     ;
+; execute_addind ; 10101 ; Unsigned Binary                     ;
+; execute_addpcr ; 10110 ; Unsigned Binary                     ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: tc140l:tiny_cpu|instruction_decoder:ID ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; fetch          ; 00001 ; Unsigned Binary                                            ;
+; execute_add    ; 00011 ; Unsigned Binary                                            ;
+; execute_store  ; 00100 ; Unsigned Binary                                            ;
+; execute_load   ; 00111 ; Unsigned Binary                                            ;
+; execute_jump   ; 01000 ; Unsigned Binary                                            ;
+; execute_jump_n ; 01001 ; Unsigned Binary                                            ;
+; execute_out    ; 01010 ; Unsigned Binary                                            ;
+; execute_xor    ; 01011 ; Unsigned Binary                                            ;
+; execute_or     ; 01100 ; Unsigned Binary                                            ;
+; execute_and    ; 01101 ; Unsigned Binary                                            ;
+; execute_jpos   ; 01110 ; Unsigned Binary                                            ;
+; execute_jzero  ; 01111 ; Unsigned Binary                                            ;
+; execute_addi   ; 10000 ; Unsigned Binary                                            ;
+; execute_shl    ; 10001 ; Unsigned Binary                                            ;
+; execute_shr    ; 10010 ; Unsigned Binary                                            ;
+; execute_sub    ; 10011 ; Unsigned Binary                                            ;
+; execute_rand   ; 10100 ; Unsigned Binary                                            ;
+; execute_addind ; 10101 ; Unsigned Binary                                            ;
+; execute_addpcr ; 10110 ; Unsigned Binary                                            ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: tc140l:tiny_cpu|altsyncram:RAM ;
++------------------------------------+----------------------+-----------------+
+; Parameter Name                     ; Value                ; Type            ;
++------------------------------------+----------------------+-----------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped         ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY      ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY    ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE    ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE  ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped         ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped         ;
+; WIDTH_A                            ; 16                   ; Signed Integer  ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer  ;
+; NUMWORDS_A                         ; 1                    ; Untyped         ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped         ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped         ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped         ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped         ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped         ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped         ;
+; WIDTH_B                            ; 1                    ; Untyped         ;
+; WIDTHAD_B                          ; 1                    ; Untyped         ;
+; NUMWORDS_B                         ; 1                    ; Untyped         ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped         ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped         ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped         ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped         ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped         ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped         ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped         ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped         ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped         ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped         ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped         ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped         ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped         ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped         ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped         ;
+; BYTE_SIZE                          ; 8                    ; Untyped         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped         ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped         ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped         ;
+; INIT_FILE                          ; addpcr.mif           ; Untyped         ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped         ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped         ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped         ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped         ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped         ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped         ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped         ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped         ;
+; ENABLE_ECC                         ; FALSE                ; Untyped         ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped         ;
+; CBXI_PARAMETER                     ; altsyncram_kus       ; Untyped         ;
++------------------------------------+----------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                           ;
++-------------------------------------------+--------------------------------+
+; Name                                      ; Value                          ;
++-------------------------------------------+--------------------------------+
+; Number of entity instances                ; 1                              ;
+; Entity Instance                           ; tc140l:tiny_cpu|altsyncram:RAM ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                    ;
+;     -- WIDTH_A                            ; 16                             ;
+;     -- NUMWORDS_A                         ; 1                              ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                   ;
+;     -- WIDTH_B                            ; 1                              ;
+;     -- NUMWORDS_B                         ; 1                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                      ;
++-------------------------------------------+--------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu May 29 02:57:53 2014
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab4_de1 -c lab4_de1
+Info: Found 1 design units, including 1 entities, in source file lab4_de2.v
+    Info: Found entity 1: lab4_de2
+Info: Found 1 design units, including 1 entities, in source file clock_divider.v
+    Info: Found entity 1: clock_divider
+Info: Found 1 design units, including 1 entities, in source file HexDigit.v
+    Info: Found entity 1: HexDigit
+Info: Found 1 design units, including 1 entities, in source file instruction_decoder.v
+    Info: Found entity 1: instruction_decoder
+Info: Found 1 design units, including 1 entities, in source file instruction_fetch.v
+    Info: Found entity 1: instruction_fetch
+Info: Found 1 design units, including 1 entities, in source file tc140l.v
+    Info: Found entity 1: tc140l
+Info: Found 1 design units, including 1 entities, in source file lab4_de1.v
+    Info: Found entity 1: lab4_de1
+Info: Elaborating entity "lab4_de1" for the top level hierarchy
+Warning (10034): Output port "UART_TXD" at lab4_de1.v(103) has no driver
+Warning (10034): Output port "DRAM_ADDR[11]" at lab4_de1.v(107) has no driver
+Warning (10034): Output port "DRAM_ADDR[10]" at lab4_de1.v(107) has no driver
+Warning (10034): Output port "DRAM_ADDR[9]" at lab4_de1.v(107) has no driver
+Warning (10034): Output port "DRAM_ADDR[8]" at lab4_de1.v(107) has no driver
+Warning (10034): Output port "DRAM_ADDR[7]" at lab4_de1.v(107) has no driver
+Warning (10034): Output port "DRAM_ADDR[6]" at lab4_de1.v(107) has no driver
+Warning (10034): Output port "DRAM_ADDR[5]" at lab4_de1.v(107) has no driver
+Warning (10034): Output port "DRAM_ADDR[4]" at lab4_de1.v(107) has no driver
+Warning (10034): Output port "DRAM_ADDR[3]" at lab4_de1.v(107) has no driver
+Warning (10034): Output port "DRAM_ADDR[2]" at lab4_de1.v(107) has no driver
+Warning (10034): Output port "DRAM_ADDR[1]" at lab4_de1.v(107) has no driver
+Warning (10034): Output port "DRAM_ADDR[0]" at lab4_de1.v(107) has no driver
+Warning (10034): Output port "DRAM_LDQM" at lab4_de1.v(108) has no driver
+Warning (10034): Output port "DRAM_UDQM" at lab4_de1.v(109) has no driver
+Warning (10034): Output port "DRAM_WE_N" at lab4_de1.v(110) has no driver
+Warning (10034): Output port "DRAM_CAS_N" at lab4_de1.v(111) has no driver
+Warning (10034): Output port "DRAM_RAS_N" at lab4_de1.v(112) has no driver
+Warning (10034): Output port "DRAM_CS_N" at lab4_de1.v(113) has no driver
+Warning (10034): Output port "DRAM_BA_0" at lab4_de1.v(114) has no driver
+Warning (10034): Output port "DRAM_BA_1" at lab4_de1.v(115) has no driver
+Warning (10034): Output port "DRAM_CLK" at lab4_de1.v(116) has no driver
+Warning (10034): Output port "DRAM_CKE" at lab4_de1.v(117) has no driver
+Warning (10034): Output port "FL_ADDR[21]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[20]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[19]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[18]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[17]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[16]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[15]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[14]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[13]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[12]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[11]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[10]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[9]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[8]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[7]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[6]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[5]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[4]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[3]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[2]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[1]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_ADDR[0]" at lab4_de1.v(120) has no driver
+Warning (10034): Output port "FL_WE_N" at lab4_de1.v(121) has no driver
+Warning (10034): Output port "FL_RST_N" at lab4_de1.v(122) has no driver
+Warning (10034): Output port "FL_OE_N" at lab4_de1.v(123) has no driver
+Warning (10034): Output port "FL_CE_N" at lab4_de1.v(124) has no driver
+Warning (10034): Output port "SRAM_ADDR[17]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[16]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[15]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[14]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[13]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[12]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[11]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[10]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[9]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[8]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[7]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[6]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[5]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[4]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[3]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[2]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[1]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_ADDR[0]" at lab4_de1.v(127) has no driver
+Warning (10034): Output port "SRAM_UB_N" at lab4_de1.v(128) has no driver
+Warning (10034): Output port "SRAM_LB_N" at lab4_de1.v(129) has no driver
+Warning (10034): Output port "SRAM_WE_N" at lab4_de1.v(130) has no driver
+Warning (10034): Output port "SRAM_CE_N" at lab4_de1.v(131) has no driver
+Warning (10034): Output port "SRAM_OE_N" at lab4_de1.v(132) has no driver
+Warning (10034): Output port "SD_CLK" at lab4_de1.v(137) has no driver
+Warning (10034): Output port "I2C_SCLK" at lab4_de1.v(140) has no driver
+Warning (10034): Output port "TDO" at lab4_de1.v(148) has no driver
+Warning (10034): Output port "VGA_HS" at lab4_de1.v(150) has no driver
+Warning (10034): Output port "VGA_VS" at lab4_de1.v(151) has no driver
+Warning (10034): Output port "VGA_R[3]" at lab4_de1.v(152) has no driver
+Warning (10034): Output port "VGA_R[2]" at lab4_de1.v(152) has no driver
+Warning (10034): Output port "VGA_R[1]" at lab4_de1.v(152) has no driver
+Warning (10034): Output port "VGA_R[0]" at lab4_de1.v(152) has no driver
+Warning (10034): Output port "VGA_G[3]" at lab4_de1.v(153) has no driver
+Warning (10034): Output port "VGA_G[2]" at lab4_de1.v(153) has no driver
+Warning (10034): Output port "VGA_G[1]" at lab4_de1.v(153) has no driver
+Warning (10034): Output port "VGA_G[0]" at lab4_de1.v(153) has no driver
+Warning (10034): Output port "VGA_B[3]" at lab4_de1.v(154) has no driver
+Warning (10034): Output port "VGA_B[2]" at lab4_de1.v(154) has no driver
+Warning (10034): Output port "VGA_B[1]" at lab4_de1.v(154) has no driver
+Warning (10034): Output port "VGA_B[0]" at lab4_de1.v(154) has no driver
+Warning (10034): Output port "AUD_DACDAT" at lab4_de1.v(159) has no driver
+Warning (10034): Output port "AUD_XCK" at lab4_de1.v(161) has no driver
+Info: Elaborating entity "HexDigit" for hierarchy "HexDigit:d0"
+Info: Elaborating entity "clock_divider" for hierarchy "clock_divider:clk1Hzfrom50MHz"
+Info: Elaborating entity "tc140l" for hierarchy "tc140l:tiny_cpu"
+Warning (10230): Verilog HDL assignment warning at tc140l.v(222): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at tc140l.v(321): truncated value with size 16 to match size of target (8)
+Info: Elaborating entity "instruction_fetch" for hierarchy "tc140l:tiny_cpu|instruction_fetch:IF"
+Warning (10230): Verilog HDL assignment warning at instruction_fetch.v(19): truncated value with size 32 to match size of target (8)
+Info: Elaborating entity "instruction_decoder" for hierarchy "tc140l:tiny_cpu|instruction_decoder:ID"
+Info: Elaborating entity "altsyncram" for hierarchy "tc140l:tiny_cpu|altsyncram:RAM"
+Info: Elaborated megafunction instantiation "tc140l:tiny_cpu|altsyncram:RAM"
+Info: Instantiated megafunction "tc140l:tiny_cpu|altsyncram:RAM" with the following parameter:
+    Info: Parameter "operation_mode" = "SINGLE_PORT"
+    Info: Parameter "width_a" = "16"
+    Info: Parameter "widthad_a" = "8"
+    Info: Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info: Parameter "lpm_type" = "altsyncram"
+    Info: Parameter "init_file" = "addpcr.mif"
+    Info: Parameter "intended_device_family" = "Cyclone"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_kus.tdf
+    Info: Found entity 1: altsyncram_kus
+Info: Elaborating entity "altsyncram_kus" for hierarchy "tc140l:tiny_cpu|altsyncram:RAM|altsyncram_kus:auto_generated"
+Warning (12020): Port "address_a" on the entity instantiation of "RAM" is connected to a signal of width 16. The formal width of the signal in the module is 8.  The extra bits will be ignored.
+Warning: Clock multiplexers are found and protected
+    Warning: Found clock multiplexer comb~0
+Warning: The following bidir pins have no drivers
+    Warning: Bidir "SD_DAT3" has no driver
+    Warning: Bidir "SD_CMD" has no driver
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDG[0]" is stuck at GND
+    Warning (13410): Pin "LEDG[1]" is stuck at GND
+    Warning (13410): Pin "LEDG[2]" is stuck at GND
+    Warning (13410): Pin "LEDG[3]" is stuck at GND
+    Warning (13410): Pin "LEDG[4]" is stuck at GND
+    Warning (13410): Pin "LEDG[5]" is stuck at GND
+    Warning (13410): Pin "LEDG[6]" is stuck at GND
+    Warning (13410): Pin "LEDG[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[4]" is stuck at GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
+    Warning (13410): Pin "LEDR[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+    Warning (13410): Pin "UART_TXD" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND
+    Warning (13410): Pin "DRAM_LDQM" is stuck at GND
+    Warning (13410): Pin "DRAM_UDQM" is stuck at GND
+    Warning (13410): Pin "DRAM_WE_N" is stuck at GND
+    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND
+    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND
+    Warning (13410): Pin "DRAM_CS_N" is stuck at GND
+    Warning (13410): Pin "DRAM_BA_0" is stuck at GND
+    Warning (13410): Pin "DRAM_BA_1" is stuck at GND
+    Warning (13410): Pin "DRAM_CLK" is stuck at GND
+    Warning (13410): Pin "DRAM_CKE" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[0]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[1]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[2]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[3]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[4]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[5]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[6]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[7]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[8]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[9]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[10]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[11]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[12]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[13]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[14]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[15]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[16]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[17]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[18]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[19]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[20]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[21]" is stuck at GND
+    Warning (13410): Pin "FL_WE_N" is stuck at GND
+    Warning (13410): Pin "FL_RST_N" is stuck at GND
+    Warning (13410): Pin "FL_OE_N" is stuck at GND
+    Warning (13410): Pin "FL_CE_N" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[0]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[1]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[2]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[3]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[4]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[5]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[6]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[7]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[8]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[9]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[10]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[11]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[12]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[13]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[14]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[15]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[16]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[17]" is stuck at GND
+    Warning (13410): Pin "SRAM_UB_N" is stuck at GND
+    Warning (13410): Pin "SRAM_LB_N" is stuck at GND
+    Warning (13410): Pin "SRAM_WE_N" is stuck at GND
+    Warning (13410): Pin "SRAM_CE_N" is stuck at GND
+    Warning (13410): Pin "SRAM_OE_N" is stuck at GND
+    Warning (13410): Pin "SD_CLK" is stuck at GND
+    Warning (13410): Pin "TDO" is stuck at GND
+    Warning (13410): Pin "I2C_SCLK" is stuck at GND
+    Warning (13410): Pin "VGA_HS" is stuck at GND
+    Warning (13410): Pin "VGA_VS" is stuck at GND
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND
+    Warning (13410): Pin "AUD_DACDAT" is stuck at GND
+    Warning (13410): Pin "AUD_XCK" is stuck at GND
+Info: 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
+    Info: Register "tc140l:tiny_cpu|state[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "tc140l:tiny_cpu|state[4]" lost all its fanouts during netlist optimizations.
+Info: Generated suppressed messages file C:/Users/Matt/Desktop/LAB4_Base_SP14/LAB4_Base_SP14/lab4_de1.map.smsg
+Warning: Design contains 19 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_24[0]"
+    Warning (15610): No output dependent on input pin "CLOCK_24[1]"
+    Warning (15610): No output dependent on input pin "CLOCK_27[0]"
+    Warning (15610): No output dependent on input pin "CLOCK_27[1]"
+    Warning (15610): No output dependent on input pin "EXT_CLOCK"
+    Warning (15610): No output dependent on input pin "KEY[0]"
+    Warning (15610): No output dependent on input pin "KEY[1]"
+    Warning (15610): No output dependent on input pin "KEY[2]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+    Warning (15610): No output dependent on input pin "UART_RXD"
+    Warning (15610): No output dependent on input pin "TDI"
+    Warning (15610): No output dependent on input pin "TCK"
+    Warning (15610): No output dependent on input pin "TCS"
+    Warning (15610): No output dependent on input pin "PS2_DAT"
+    Warning (15610): No output dependent on input pin "PS2_CLK"
+    Warning (15610): No output dependent on input pin "AUD_ADCDAT"
+Info: Implemented 849 device resources after synthesis - the final resource count might be different
+    Info: Implemented 27 input pins
+    Info: Implemented 137 output pins
+    Info: Implemented 119 bidirectional pins
+    Info: Implemented 550 logic cells
+    Info: Implemented 16 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 230 warnings
+    Info: Peak virtual memory: 225 megabytes
+    Info: Processing ended: Thu May 29 02:57:57 2014
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Matt/Desktop/LAB4_Base_SP14/LAB4_Base_SP14/lab4_de1.map.smsg.
+
+
